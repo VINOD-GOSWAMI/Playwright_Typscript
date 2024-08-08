@@ -1,0 +1,14 @@
+# .gitlab-ci.yml
+
+stages:
+  - test
+
+test:
+  stage: test
+  image: mcr.microsoft.com/playwright:latest
+  script:
+    - npm install
+    - npx playwright test
+  artifacts:
+    paths:
+      - test-results/
